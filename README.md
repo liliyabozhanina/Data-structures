@@ -1,1 +1,2 @@
-# SD-Cpp-2019-2020
+# SD-Cpp
+Структури от данни/Data structures
