@@ -1,2 +1,2 @@
-# SD-Cpp
+# SD
 Структури от данни/Data structures
