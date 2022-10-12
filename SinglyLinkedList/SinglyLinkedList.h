@@ -26,7 +26,6 @@ private:
 	Node* current; 
 	size_t size; 
 
-	//pomoshtni funkcii
 	void copy_list(const SinglyLinkedList&); 
 	void delete_list(); 
 public:
