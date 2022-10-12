@@ -15,7 +15,6 @@ void SinglyLinkedList::copy_list(const SinglyLinkedList& other_list)
 		size = 0;
 		return;
 	}
-	//suzdavane(kopirane) na purviq vuzel
 	current = other_list.first;
 	first = new Node(current->value);
 	last = first;
@@ -23,8 +22,8 @@ void SinglyLinkedList::copy_list(const SinglyLinkedList& other_list)
 	current = current->next;
 	while (current != nullptr)
 	{
-		copy = new Node(current->value); //suzdava se nov vuzel
-		last->next = copy; //noviqt vuzel e naslednik na predishniq
+		copy = new Node(current->value); 
+		last->next = copy; 
 		last = copy;
 		current = current->next;
 	}
@@ -96,7 +95,6 @@ void SinglyLinkedList::push_back(int value)
 		++size;
 		return;
 	}
-	//dobavqne na nov vuzel sled tekushtiq posleden
 	Node* last_value = last;
 	last_value->next = new Node(value);
 	last = last_value->next;
@@ -110,7 +108,7 @@ void SinglyLinkedList::pop_front()
 		return;
 	}
 	else if (first->next == nullptr)
-		last = nullptr; //spisukut ne e prazen, no ima samo edin vuzel
+		last = nullptr; 
 
 	Node * p = this->first;
 	first = first->next;
@@ -128,20 +126,19 @@ void SinglyLinkedList::pop_back()
 	{
 		delete first;
 		first = nullptr;
-		last = nullptr; //spisukut ne e prazen, no ima samo edin vuzel
+		last = nullptr; 
 		--size;
 		return;
 	}
 
 	Node* last_value = this->first;
-	Node* prev_value = nullptr; //adres na predposledniq vuzel
+	Node* prev_value = nullptr; 
 
 	while (last_value->next != nullptr)
 	{
 		prev_value = last_value;
 		last_value = last_value->next;
 	}
-	//last = prev_value;
 	prev_value->next = nullptr;
 	delete last_value;
 	--size;
@@ -155,12 +152,12 @@ void SinglyLinkedList::delete_node(int current)
 	}
 	if (first->value == current)
 	{
-		Node* p = this->first; //trqbva da se iztrie purviqt vuzel
+		Node* p = this->first; 
 		if (first->next != nullptr)
 		{
 			first = first->next;
 		}
-		else //spisukut ima samo edin vuzel
+		else 
 		{
 			first = nullptr;
 			last = nullptr;
@@ -169,7 +166,6 @@ void SinglyLinkedList::delete_node(int current)
 		--size;
 		return;
 	}
-	//tursene na elementa, koito trqbva da se iztrie
 	Node* delete_node = this->first;
 	while (delete_node->next != nullptr && delete_node->next->value != current)
 	{
@@ -177,7 +173,7 @@ void SinglyLinkedList::delete_node(int current)
 	}
 	if (delete_node->next != nullptr)
 	{
-		Node* p = delete_node->next; //adres na vuzela za iztrivane
+		Node* p = delete_node->next; 
 		delete_node->next = delete_node->next->next;
 		delete p;
 		--size;
