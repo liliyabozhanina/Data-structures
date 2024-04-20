@@ -14,7 +14,7 @@ public:
 	Queue(); 
 	Queue(const Queue& other); 
 	Queue& operator=(const Queue& other); 
-	~Queue(); //деструктор
+	~Queue(); 
 
 	void enqueue(const T&); 
 	void dequeue(T&); 
