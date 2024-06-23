@@ -23,7 +23,7 @@ int main() {
 	cout << "Tree root: " << tree.getRoot() << endl; //5
 	cout << "Tree height: " << tree.height() << endl; //3
 
-	// Проверка на обхождане на дървото
+	// Проверка за обхождане на дървото
 	cout << "Inorder: ";
 	tree.inorder(); // Трябва да отпечата: 1 3 4 5 8
 	cout << endl;
@@ -49,11 +49,10 @@ int main() {
 	testTree.inorder(); // Трябва да отпечата: 1 3 4 5 8
 	cout << endl;
 
-	// Тест на левия и десния поддърво
+	// Тест на лявото и дясното поддърво
 	cout << "Left subtree root: " << tree.getLeft().getRoot() << endl; // Трябва да отпечата: 3
 	cout << "Right subtree root: " << tree.getRight().getRoot() << endl; // Трябва да отпечата: 8
 
-	// Тест на методите за листа
 	cout << "Tree is leaf: " << (tree.isLeaf() ? "Yes" : "No") << endl; // Трябва да отпечата: No
 	BST<int> leafTree;
 	leafTree.insert(10);
